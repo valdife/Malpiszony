@@ -2,33 +2,21 @@
     <div>
         <%= form.label :imie %><br>
         <%= form.text_field :first_name %>
-        <% reservations.errors.full_messages_for(:first_name).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
     </div>
     
     <div>
         <%= form.label :nazwisko %><br>
         <%= form.text_field :last_name %>
-        <% reservations.errors.full_messages_for(:last_name).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
     </div>
 
     <div>
         <%= form.label :telefon %><br>
         <%= form.telephone_field :phone %>
-        <% reservations.errors.full_messages_for(:phone).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
     </div>
 
     <div>
         <%= form.label :email %><br>
         <%= form.email_field :email %>
-        <% reservations.errors.full_messages_for(:email).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
     </div>
 
     <div>
@@ -38,11 +26,12 @@
         <% else %>
             <%= form.select :event_id, Event.all.collect {|e| [e.name,e.id]}, include_blank: false %>
         <% end %>
-        <% reservations.errors.full_messages_for(:description).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
     </div>
-
+        <ul>
+            <% reservations.errors.full_messages.each do |message| %>
+                <li> <%= message %> </li>
+            <% end %>
+        </ul>
     <div>
         <%= form.submit %>
     </div>

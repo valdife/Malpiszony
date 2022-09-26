@@ -5,6 +5,7 @@
       <th scope="col">#</th>
       <th scope="col">Nazwa</th>
       <th scope="col">Numer wybiegu</th>
+      <th scope="col">Ilość rezerwacji</th>
       <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -16,9 +17,10 @@
         <th scope="row"><%=event.id%></th>
         <td><%=event.name%></td>
         <td><%=event.enclosure_id%></td>
+        <td><%=event.reservation.count%></td>
         <td><%= button_to "Usuń", admin_event_path(event), class: "btn btn-danger", form: { data: { turbo_confirm: "Czy na pewno?" } }, method: :delete%></td>
         <td><a href="<%= edit_admin_event_path(event) %>" type="a" class="btn btn-warning">Edytuj</a></td>
-        <td><a href="<%= admin_animals_url(event) %>" type="a" class="btn btn-info">Szczegóły</a></td>
+        <td><a href="<%= admin_event_url(event) %>" type="a" class="btn btn-info">Szczegóły</a></td>
       </tr>
     <% end %>
   </tbody>

@@ -291,6 +291,13 @@ h3 {
     margin:10px;
 }
 
+.eventHover .eventNotif {
+    text-shadow: 0 0;
+    color: #5a7581;
+    font-size: 0.9rem;
+    margin:5px 10px 10px 10px;
+}
+
 .simple-calendar table {
     border-collapse: collapse;
 }
@@ -437,8 +444,6 @@ h3 {
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding-top: 100px;
-    padding-bottom: 100px;
     background-color: #a7bbac;
 }
 
@@ -447,22 +452,25 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 30%;
 }
 
 .contactBox {
     display: flex;
     flex-direction: row;
-    width: 90%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #30362f;
+    color: white
 }
 
 .contactInformation {
     display: flex;
-    width: 45%;
+    width: 100%;
     flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .informationBox {
@@ -486,7 +494,7 @@ h3 {
 
 .contactDays h3 {
     font-weight: bold;
-    color: black;
+    color: white;
     margin-left: 0;
     margin-bottom: 5px;
 }
@@ -553,7 +561,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 70%;
     color: black;
 }
 
@@ -573,20 +581,20 @@ h3 {
     background-color: #30362f;
     color: whitesmoke;
     font-size: x-large;
-  }
-  
-  .marquee__inner {
+}
+
+.marquee__inner {
     white-space: nowrap;
     display: inline-block;
     /* Some browsers may require -webkit-animation */
     animation: scroll 20s linear infinite;
     margin-top: 5px;
     margin-bottom: 5px;
-  }
-  
-  /* Creates two white-to-transparent gradients at the ends of the marquee */
-  .marquee::before,
-  .marquee::after {
+}
+
+/* Creates two white-to-transparent gradients at the ends of the marquee */
+.marquee::before,
+.marquee::after {
     z-index: 1;
     top: 0;
     left: 0;
@@ -596,30 +604,36 @@ h3 {
     content: "";
     display: block;
     background: linear-gradient(to right, #30362f, transparent);
-  }
-  
-  .marquee::after {
+}
+
+.marquee::after {
     left: auto;
     right: 0;
     transform: rotate(180deg);
-  }
-  
-  /* Pauses the animations when we hover the marquee */
-  .marquee:hover,
-  .marquee:hover .marquee__inner {
-    /* Some browsers may require -webkit-animation-play-state */
+}
+
+/* Pauses the animations when we hover the marquee */
+.marquee:hover,
+.marquee:hover .marquee__inner {
+/* Some browsers may require -webkit-animation-play-state */
     animation-play-state: paused;
-  }
-  
-  /* Some browsers may require @-webkit-keyframes */
-  @keyframes reduce {
-    to {
-      padding-left: 0;
-    }
-  }
-  
-  @keyframes scroll {
-    to {
-      transform: translateX(-100%);
-    }
-  }
+}
+
+/* Some browsers may require @-webkit-keyframes */
+@keyframes reduce {
+to {
+    padding-left: 0;
+}
+}
+
+@keyframes scroll {
+to {
+    transform: translateX(-100%);
+}
+}
+
+#googleMap {
+    height: 600px;
+    width: 100%;
+}
+

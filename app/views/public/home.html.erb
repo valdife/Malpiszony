@@ -30,7 +30,7 @@
                             <p>Kontakt</p>
                         </div>
                     </a>
-                    <%= link_to 'Admin', admin_animals_url %>
+                    <%= link_to 'Admin', admin_dashboard_index_url %>
                 </div>
             </div>
             <div class="mainBlock">
@@ -51,11 +51,21 @@
                         O nas i naszych zwierzetach
                     </h1>
                     <h3 class="animalText">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis nisi dignissim posuere pulvinar. Nullam ultrices ipsum eget ligula tincidunt, eget vulputate metus rutrum. Praesent vitae eros auctor, vulputate mi et, facilisis felis. Nulla ut risus
-                        purus. Pellentesque cursus leo lorem. Fusce sed tempor nibh. Sed ac tempus massa. Aliquam fringilla in purus in gravida. Curabitur et ultricies purus. Morbi nisl ipsum, pulvinar a viverra id, convallis in nisi. Mauris tellus metus,
-                        suscipit sed neque vel, facilisis egestas justo. Proin fermentum consequat pulvinar. Phasellus eget egestas dui, aliquet lobortis velit. Duis vitae tortor dictum, mattis metus in, efficitur nulla. Pellentesque convallis ullamcorper
-                        mi convallis fermentum. Quisque quis arcu felis.
-                        <h3>
+                        Nie musisz kupować biletów lotniczych i wyruszać w dalekie kraje aby stanąć oko w oko z egzotyczną fauną. 
+                        Atrakcje jakie zobaczysz w naszym zoo spowodują, że spędzony w nim czas dostarczy Ci ekscytujących wrażeń. 
+                        Rozmiary terenu zajmowanego przez wybiegi prezentowanych w ogrodzie zoologicznym zwierząt pozwalają na stworzenie im dogodnych warunków bytowania. 
+                        Okazami, które możesz u nas zobaczyć są pochodzące z tropikalnych lasów Sumatry i Borneo orangutany. 
+                        DNA tych odległych krewnych naszego gatunku aż w 97% pokrywa się z naszym własnym. 
+                        Obok nich w naszej małpiarni znajduje się kolejny gatunek należący do rzędu naczelnych - szympansy. 
+                        W tym samym budynku znajdziesz jeszcze jeden gatunek z rodziny człowiekowatych - majestatyczne goryle pochodzące ze środkowej afryki. 
+                        Yeti, to legendarne stworzenie znane wszystkim z opowieści w porównaniu z nimi to nic. 
+                        Skieruj swoje kroki do ogrodu zoologicznego "Pazurek" a zyskasz wyjątkową okazję aby oglądać urocze czerwone pandy. 
+                        Odległymi krewniakami tych zwierząt są ikony czerwonej księgi zwierząt zagrożonych wyginięciem pandy wielkie. 
+                        Centralne miejsce w naszym zoo zajmuje pawilon afrykański. Jego mieszkańcami są najbardziej znane stworzenia zamieszkujące ten gorący kontynent. 
+                        Afrykańskie słonie oraz żyrafy. Lew król zwierząt z majestatyczną grzywą też ma tam swój wybieg. Inny przestronny pawilon zajmują niedźwiedzie. 
+                        Zwierzęta należące do tej rodziny mieszkają na wszystkich kontynentach oprócz Antarktydy (której nazwa oznacza brak niedźwiedzi polarnych). 
+                        Mamy nadzieję, że szybko się spotkamy, do zobaczenia!
+                    <h3>
                 </div>
             </div>
             <div class="breakLine"></div>
@@ -140,44 +150,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="informationForm">
-                            <h2>Masz pytanie? Zadaj je!</h2>
-                            <form>
-                                <label>Imie i nazwisko</label>
-                                <input type="text">
-                                <label>Email kontaktowy</label>
-                                <input type="email">
-                                <label>Wiadomośc</label>
-                                <input type="text">
-                                <div class="formButton">
-                                    <button type="submit">
-                                        Wyślij wiadomość
-                                    </button>
-                                </div>
-                            </form>
-                            <div class="logos">
-                                <a href="facebook.com">
-                                    <div class="logoImage">
-                                        <%= image_tag "facebook.png"%>
-                                    </div>
-                                </a>
-                                <a href="twitter.com">
-                                    <div class="logoImage">
-                                        <%= image_tag "twitter.png"%>
-                                    </div>
-                                </a>
-                                <a href="instagram.com">
-                                    <div class="logoImage">
-                                        <%= image_tag "instagram.png"%>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="contactRight ">
-                    <%= image_tag "mapa.png"%>
-                </div>
+                <div id="googleMap"></div>
+                <script>
+                    function myMap() {
+                        var location = new google.maps.LatLng(50.35159,19.63051)
+                        var mapProp= {
+                            center: location,
+                            zoom:15,
+                        };
+                        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                        var marker = new google.maps.Marker({
+                            position: location,
+                            label: {
+                                color: 'black',
+                                fontWeight: 'bold',
+                                text: 'Zoo Pazurek'
+                            },
+                            map:map,
+                        })
+                    }
+                    myMap();
+                </script>
             </div>
         </div>
     </div>

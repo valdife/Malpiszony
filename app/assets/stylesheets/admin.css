@@ -109,7 +109,33 @@ body {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: grey;
+    /* background-color: grey; */
+}
+
+.nav-icon img {
+    width: 35px;
+    height: 35px;
+}
+
+
+.main-icon {
+    background-image: url("domek.png");
+}
+
+.animal-icon {
+    background-image: url("zwierzeta.png");
+}
+
+.enclosure-icon {
+    background-image: url("wybieg.png");
+}
+
+.event-icon {
+    background-image: url("kalendarz.png");
+}
+
+.reservation-icon {
+    background-image: url("rezerwacje.png");
 }
 
 #yield-content {
@@ -136,3 +162,30 @@ body {
     margin: 5px;
 }
 
+/* Dashboard */
+
+.info-block-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-block {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black;
+    margin: 10px;
+}
+.info-block h1,h3 {
+    margin: 10px;
+}
+
+.charts-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+b {
+    font-weight: bold;
+}

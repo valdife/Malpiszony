@@ -9,17 +9,21 @@
           <div class="eventName">
             <%= event.name %>
           </div>
-          <%= link_to "Zarezerwuj", new_reservation_path(:event_id => event.id) %>
+          <% if event.is_incoming %>
+            <%= link_to "Zarezerwuj", new_reservation_path(:event_id => event.id) %>
+          <% else %>
+            <div class="eventNotif">Rezerwacje zakończone</div>
+          <% end %>
         </div>
         <div class="eventDescription">
           <div>
-            Nazwa wydarzenia: <%= event.name %>
+            <b><%= event.description %></b>
           </div>
           <div>
-            Początek wydarzenia: <%= event.start_time %>
+            Początek wydarzenia:</br> <%= event.start_time.strftime("%d-%m-%Y %H:%M") %>
           </div>
           <div>
-            Koniec wydarzenia: <%= event.end_time %>
+            Koniec wydarzenia:</br> <%= event.end_time.strftime("%d-%m-%Y %H:%M") %>
           </div>
         </div>
       </div>

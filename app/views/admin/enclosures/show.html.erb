@@ -19,4 +19,14 @@
     <% end %>
 </ul>
 
+<h2>
+    Opiekunowie wybiegu
+</h2>
+<ul>
+    <% @enclosures.employees.each do |employee| %>
+    <li>
+        <%=employee.email%>
+    </li>
+    <% end %>
+</ul>
 <td><a href="/admin/enclosures/" type="a" class="btn btn-info">Powrót</a></td>

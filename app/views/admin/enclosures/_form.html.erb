@@ -16,6 +16,15 @@
     </div>
 
     <div>
+        <%= form.collection_check_boxes(:employee_ids, Employee.all, :id, :email) do |b| %>
+            <div>
+                <%= b.check_box%>
+                <%= b.label(:"data-value" => b.value) %>
+            </div>
+        <% end %>
+    </div>
+
+    <div>
         <%= form.submit %>
     </div>
     

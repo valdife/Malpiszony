@@ -1,12 +1,15 @@
 class Admin::EventsController < ApplicationController
     layout 'admin'
     before_action :authenticate_employee!
+
     def index
       @events = Event.all
     end
+
     def show
       @events = Event.find(params[:id])
     end
+    
     def new
       @events = Event.new
       @enclosures_ids = Enclosure.all.collect(&:id)
@@ -46,7 +49,7 @@ class Admin::EventsController < ApplicationController
   
     private
       def events_params
-        params.require(:event).permit(:name, :start_time, :end_time, :enclosure_id)
+        params.require(:event).permit(:name, :start_time, :end_time, :enclosure_id, :description)
       end
 end
 

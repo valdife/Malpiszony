@@ -32,6 +32,8 @@ gem "jbuilder"
 gem "devise"
 gem "turbolinks"
 gem "simple_calendar", "~> 2.4"
+gem "chartkick"
+gem "groupdate"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

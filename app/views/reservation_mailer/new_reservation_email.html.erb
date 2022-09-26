@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Witaj, <%=@reservation.first_name%>!</h1>
+    <p>Otrzymaliśmy twoją rezerwację na wydarzenie <%= Event.find(@reservation.event_id).name %>.</p>
+    <p> 
+    Dane rezerwacji:<br><br>
+    Imię i nazwisko: <%= @reservation.first_name %> <%= @reservation.last_name %><br>
+    Numer telefonu: <%= @reservation.phone %><br>
+    </p>
+    <p>Wydarzenie będzie trwało od <%= Event.find(@reservation.event_id).start_time %> do <%= Event.find(@reservation.event_id).end_time %></p>
+    <h3>Do zobaczenia!</h3>
+    Zoo Pazurek
+  </body>
+</html>

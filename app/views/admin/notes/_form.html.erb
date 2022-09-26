@@ -1,0 +1,23 @@
+<%= form_with model: [:admin, :animal, note] do |form| %>
+    <div>
+        <%= form.label :tresc %><br>
+        <%= form.text_area :content %>
+        <% note.errors.full_messages_for(:name).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :data %><br>
+        <%= form.datetime_field :date, value: Time.now %>
+        <% note.errors.full_messages_for(:date).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    
+    <%= form.hidden_field :employee_id, value: current_employee.id %>
+    <%= form.hidden_field :animal_id, value: @animal_id %>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

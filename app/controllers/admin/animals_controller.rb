@@ -1,13 +1,16 @@
 class Admin::AnimalsController < ApplicationController
   layout 'admin'
   before_action :authenticate_employee!
+
   def index
     @animals = Animal.all.order("id")
   end
+  
   def show
     @animals = Animal.find(params[:id])
     @notes = @animals.note
   end
+  
   def new
     @animals = Animal.new
     @enclosures_ids = Enclosure.all.collect(&:id)

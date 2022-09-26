@@ -19,6 +19,7 @@
         <td><%= button_to "Usuń", admin_animal_path(animal), class: "btn btn-danger", form: { data: { turbo_confirm: "Czy na pewno?" } }, method: :delete%></td>
         <td><a href="<%= edit_admin_animal_path(animal) %>" type="a" class="btn btn-warning">Edytuj</a></td>
         <td><a href="<%= admin_animal_path(animal) %>" type="a" class="btn btn-info">Szczegóły</a></td>
+        <td><%= link_to "Dodaj notke", new_admin_animal_note_path(:animal_id => animal.id), class: "btn btn-success"%></td>
       </tr>
     <% end %>
   </tbody>

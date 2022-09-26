@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_17_142831) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_07_130704) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_142831) do
     t.string "name"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.text "description"
     t.index ["enclosure_id"], name: "index_events_on_enclosure_id"
   end
 
