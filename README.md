@@ -19,8 +19,6 @@ sudo su postgres
 psql
 CREATE ROLE monkey WITH LOGIN SUPERUSER PASSWORD 'password';
 
-If any database problems occured - HAPPENS XDD (dm valdife)
-
 * Database creation
 bin/rails db:create
 
