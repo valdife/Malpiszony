@@ -8,7 +8,7 @@
     </div>
     
     <div>
-        <%= form.label :gatunek %><br>
+        <%= form.label :data_rozpoczecia %><br>
         <%= form.datetime_field :start_time %>
         <% events.errors.full_messages_for(:start_time).each do |message| %>
             <div><%= message %></div>
@@ -16,7 +16,7 @@
     </div>
 
     <div>
-        <%= form.label :wiek %><br>
+        <%= form.label :data_zakonczenia %><br>
         <%= form.datetime_field :end_time %>
         <% events.errors.full_messages_for(:end_time).each do |message| %>
             <div><%= message %></div>
@@ -24,7 +24,7 @@
     </div>
 
     <div>
-        <%= form.label :wybieg %><br>
+        <%= form.label :numer_wybiegu %><br>
         <%= form.select :enclosure_id, @enclosures_ids %>
         <% events.errors.full_messages_for(:enclosure_id).each do |message| %>
             <div><%= message %></div>
