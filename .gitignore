@@ -67,3 +67,6 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+.ruby-version
+tmp/cache/bootsnap/load-path-cache
+log/development.log
